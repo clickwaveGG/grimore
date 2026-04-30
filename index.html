@@ -6,7 +6,7 @@
 <title>Grimore — Conjure o conhecimento de qualquer grimório</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=VT323&family=Noto+Sans+Runic&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=MedievalSharp&family=IM+Fell+English:ital@0;1&family=IM+Fell+DW+Pica:ital@0;1&family=Cardo:ital@0;1&family=Noto+Sans+Runic&display=swap" rel="stylesheet">
 <style>
 :root {
   --void: #030303;
@@ -19,19 +19,17 @@
   --ink-black: #1A1520;
   --ash: #6B6478;
   --dust: #B5AEC2;
-  --bronze: #8C6118;
-  --gold: #D4A841;
-  --spark: #F5DC8A;
-  --cyan: #28A0D6;
-  --cyan-light: #7CE3FF;
+  --paper: #F4F1EA;
+  --bone: #E8E2D5;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
   color: white;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 16px;
+  font-family: 'IM Fell English', 'Cardo', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.55;
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
@@ -93,7 +91,7 @@ html, body {
   right: -10%;
   width: 70%;
   height: 70%;
-  background: rgba(212, 168, 65, 0.12);
+  background: rgba(168, 118, 235, 0.18);
   animation: aurora-pulse-2 18s ease-in-out infinite;
 }
 
@@ -102,7 +100,7 @@ html, body {
   right: 20%;
   width: 40%;
   height: 40%;
-  background: rgba(40, 160, 214, 0.08);
+  background: rgba(244, 241, 234, 0.05);
   animation: aurora-pulse-3 20s ease-in-out infinite;
 }
 
@@ -137,7 +135,7 @@ html, body {
   transform: translateX(-50%);
   width: 800px;
   height: 600px;
-  background: radial-gradient(ellipse at center, rgba(107, 63, 181, 0.25) 0%, rgba(212, 168, 65, 0.08) 40%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(107, 63, 181, 0.32) 0%, rgba(168, 118, 235, 0.12) 40%, transparent 70%);
   border-radius: 50%;
   filter: blur(80px);
   z-index: 3;
@@ -166,9 +164,9 @@ html, body {
   animation: drift-up 8s ease-in-out infinite;
 }
 
-.spark.gold { background: var(--gold); box-shadow: 0 0 4px var(--gold); }
-.spark.cyan { background: var(--cyan-light); box-shadow: 0 0 4px var(--cyan); }
-.spark.violet { background: var(--lumen); box-shadow: 0 0 4px var(--lumen); }
+.spark.gold { background: var(--paper); box-shadow: 0 0 4px var(--paper); }
+.spark.cyan { background: var(--lumen); box-shadow: 0 0 4px var(--lumen); }
+.spark.violet { background: var(--mist); box-shadow: 0 0 6px var(--lumen); }
 
 @keyframes drift-up {
   0% { opacity: 0; transform: translateY(0); }
@@ -197,7 +195,7 @@ html, body {
 .rune-decor.r4 { top: 45%; right: 5%; transform: rotate(-90deg); font-size: 16px; }
 .rune-decor.r5 { bottom: 18%; left: 8%; transform: rotate(20deg); font-size: 15px; }
 .rune-decor.r6 { bottom: 15%; right: 10%; transform: rotate(-12deg); font-size: 17px; }
-.rune-decor.glyph { color: var(--gold); opacity: 0.12; font-family: 'Cinzel', serif; font-size: 36px; }
+.rune-decor.glyph { color: var(--lumen); opacity: 0.18; font-family: 'UnifrakturMaguntia', serif; font-size: 42px; }
 
 @keyframes rune-float {
   0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
@@ -240,12 +238,12 @@ html, body {
 }
 
 .nav-name {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 2px;
-  color: var(--gold);
-  text-shadow: 0 0 16px rgba(212, 168, 65, 0.3);
+  font-family: 'UnifrakturMaguntia', 'MedievalSharp', serif;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: var(--paper);
+  text-shadow: 0 0 18px rgba(168, 118, 235, 0.4);
 }
 
 .nav-links {
@@ -281,12 +279,13 @@ html, body {
 
 .btn-login {
   padding: 10px 22px;
-  font-size: 13px;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'MedievalSharp', serif;
+  letter-spacing: 1.5px;
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
   color: white;
   cursor: pointer;
   transition: background 0.2s;
@@ -298,11 +297,12 @@ html, body {
 
 .btn-signup {
   padding: 10px 22px;
-  font-size: 13px;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  border-radius: 999px;
-  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'MedievalSharp', serif;
+  letter-spacing: 1.5px;
+  border-radius: 0;
+  border: 1px solid var(--lumen);
   background: linear-gradient(135deg, var(--spell-violet), var(--arcane));
   color: white;
   cursor: pointer;
@@ -342,14 +342,15 @@ html, body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
-  background: rgba(212, 168, 65, 0.08);
-  border: 1px solid rgba(212, 168, 65, 0.25);
-  border-radius: 999px;
-  font-family: 'VT323', monospace;
-  font-size: 13px;
-  letter-spacing: 1.5px;
-  color: var(--gold);
+  padding: 8px 18px;
+  background: rgba(168, 118, 235, 0.08);
+  border: 1px solid rgba(168, 118, 235, 0.3);
+  border-radius: 0;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--mist);
   text-transform: uppercase;
   animation: fade-up 0.8s ease-out;
 }
@@ -367,65 +368,71 @@ html, body {
 
 /* Headline */
 .headline {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(40px, 7vw, 80px);
-  font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  background: linear-gradient(180deg, white 0%, #B5AEC2 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: 'MedievalSharp', 'UnifrakturMaguntia', serif;
+  font-size: clamp(46px, 8vw, 92px);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: 0.5px;
+  color: var(--paper);
+  text-shadow: 0 4px 30px rgba(168, 118, 235, 0.25);
   animation: fade-up 0.8s ease-out 0.2s both;
 }
 
 .headline .accent {
-  background: linear-gradient(135deg, var(--gold) 0%, var(--spark) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-style: italic;
+  font-family: 'UnifrakturMaguntia', serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--lumen);
+  text-shadow: 0 0 32px rgba(168, 118, 235, 0.6);
+  display: inline-block;
+  margin-top: 0.05em;
 }
 
 /* Subhead */
 .subhead {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.55);
-  max-width: 580px;
+  font-family: 'IM Fell English', serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.55;
+  color: rgba(232, 226, 213, 0.78);
+  max-width: 600px;
   animation: fade-up 0.8s ease-out 0.4s both;
 }
 
 /* CTA principal */
 .cta-primary {
   position: relative;
-  padding: 18px 40px;
-  background: white;
+  padding: 18px 44px;
+  background: var(--paper);
   color: var(--void);
-  font-family: 'Cinzel', serif;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 1.5px;
+  font-family: 'MedievalSharp', serif;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  border-radius: 999px;
-  border: none;
+  border-radius: 0;
+  border: 1px solid var(--bone);
   cursor: pointer;
   overflow: hidden;
   animation: fade-up 0.8s ease-out 0.6s both;
-  transition: transform 0.2s;
+  transition: all 0.2s;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  box-shadow: 0 0 32px rgba(168, 118, 235, 0.25);
 }
 
-.cta-primary:hover { transform: scale(1.05); }
-.cta-primary:active { transform: scale(0.95); }
+.cta-primary:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 48px rgba(168, 118, 235, 0.5);
+}
+.cta-primary:active { transform: scale(0.97); }
 
 .cta-primary::before {
   content: '✦';
   font-size: 18px;
-  color: var(--gold);
+  color: var(--spell-violet);
 }
 
 /* ============ CHAT CARD (estilo Liquid) ============ */
@@ -439,13 +446,13 @@ html, body {
 
 .chat-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.025);
+  background: rgba(15, 8, 23, 0.55);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
+  border: 1px solid rgba(168, 118, 235, 0.18);
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(168, 118, 235, 0.05);
   animation: scale-in 0.8s ease-out 1s both;
 }
 
@@ -454,17 +461,17 @@ html, body {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Cantos dourados sutis */
+/* Cantos arcanos sutis */
 .chat-card::before, .chat-card::after,
 .chat-card .corner-bl, .chat-card .corner-br {
   content: '';
   position: absolute;
-  width: 20px;
-  height: 20px;
-  border-color: var(--gold);
+  width: 22px;
+  height: 22px;
+  border-color: var(--lumen);
   border-style: solid;
   border-width: 0;
-  opacity: 0.6;
+  opacity: 0.7;
   z-index: 2;
 }
 
@@ -495,22 +502,23 @@ html, body {
 }
 
 .chat-label {
-  font-family: 'VT323', monospace;
-  font-size: 11px;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
-  color: rgba(255, 255, 255, 0.4);
-  font-weight: 700;
+  letter-spacing: 3px;
+  color: rgba(232, 226, 213, 0.5);
+  font-weight: 400;
 }
 
 .chat-label::before {
   content: '◇ ';
-  color: var(--gold);
+  color: var(--lumen);
 }
 
 .chat-title {
-  font-family: 'Cinzel', serif;
-  font-size: 18px;
+  font-family: 'MedievalSharp', serif;
+  font-size: 22px;
   font-weight: 500;
   color: white;
   margin-top: 4px;
@@ -523,13 +531,13 @@ html, body {
 
 .chat-textarea {
   width: 100%;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  color: rgba(255, 255, 255, 0.9);
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  padding: 18px;
+  background: rgba(15, 8, 23, 0.4);
+  border: 1px solid rgba(168, 118, 235, 0.15);
+  border-radius: 0;
+  color: rgba(232, 226, 213, 0.95);
+  font-family: 'IM Fell English', serif;
+  font-size: 17px;
   line-height: 1.5;
   resize: none;
   min-height: 60px;
@@ -538,11 +546,11 @@ html, body {
   transition: all 0.2s;
 }
 
-.chat-textarea::placeholder { color: rgba(255, 255, 255, 0.2); font-style: italic; }
+.chat-textarea::placeholder { color: rgba(232, 226, 213, 0.3); font-style: italic; }
 .chat-textarea:focus {
-  border-color: rgba(212, 168, 65, 0.3);
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 0 0 3px rgba(212, 168, 65, 0.08);
+  border-color: rgba(168, 118, 235, 0.5);
+  background: rgba(15, 8, 23, 0.6);
+  box-shadow: 0 0 0 3px rgba(168, 118, 235, 0.1);
 }
 
 /* Anexos */
@@ -645,16 +653,16 @@ html, body {
 }
 
 .btn-conjurar {
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.2);
-  font-family: 'Cinzel', serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  padding: 11px 22px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(232, 226, 213, 0.3);
+  font-family: 'MedievalSharp', serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  border: none;
-  border-radius: 999px;
+  border: 1px solid rgba(168, 118, 235, 0.15);
+  border-radius: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -663,12 +671,13 @@ html, body {
 }
 
 .btn-conjurar.active {
-  background: linear-gradient(135deg, var(--gold), var(--spark));
+  background: var(--paper);
   color: var(--void);
-  box-shadow: 0 4px 20px rgba(212, 168, 65, 0.3);
+  border-color: var(--bone);
+  box-shadow: 0 0 20px rgba(168, 118, 235, 0.35);
 }
 
-.btn-conjurar.active:hover { box-shadow: 0 4px 28px rgba(212, 168, 65, 0.5); }
+.btn-conjurar.active:hover { box-shadow: 0 0 28px rgba(168, 118, 235, 0.6); }
 
 .btn-conjurar svg { width: 12px; height: 12px; }
 
@@ -680,8 +689,8 @@ html, body {
   bottom: calc(100% + 8px);
   background: rgba(15, 8, 23, 0.95);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 168, 65, 0.2);
-  border-radius: 12px;
+  border: 1px solid rgba(168, 118, 235, 0.25);
+  border-radius: 0;
   z-index: 50;
   overflow: hidden;
   display: none;
@@ -691,29 +700,31 @@ html, body {
 .cmd-palette.show { display: block; }
 
 .cmd-palette-header {
-  padding: 8px 14px;
-  font-family: 'VT323', monospace;
-  font-size: 11px;
+  padding: 10px 14px;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--gold);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  letter-spacing: 3px;
+  color: var(--lumen);
+  border-bottom: 1px solid rgba(168, 118, 235, 0.1);
 }
 
 .cmd-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 14px;
+  padding: 11px 14px;
   cursor: pointer;
   transition: background 0.15s;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
+  font-family: 'IM Fell English', serif;
+  font-size: 15px;
+  color: rgba(232, 226, 213, 0.75);
 }
 
 .cmd-item:hover, .cmd-item.active {
-  background: rgba(212, 168, 65, 0.08);
-  color: white;
+  background: rgba(168, 118, 235, 0.1);
+  color: var(--paper);
 }
 
 .cmd-icon {
@@ -722,18 +733,18 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(232, 226, 213, 0.55);
 }
 
 .cmd-icon svg { width: 16px; height: 16px; }
 
-.cmd-label { font-weight: 500; }
+.cmd-label { font-weight: 400; }
 .cmd-prefix {
-  color: var(--gold);
-  font-family: 'VT323', monospace;
+  color: var(--lumen);
+  font-family: 'MedievalSharp', serif;
   font-size: 13px;
   margin-left: auto;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 /* ============ FOOTER ============ */
@@ -745,10 +756,12 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  font-size: 10px;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 12px;
   letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.3);
-  font-weight: 700;
+  color: rgba(232, 226, 213, 0.4);
+  font-weight: 400;
   text-transform: uppercase;
   z-index: 20;
 }
@@ -756,9 +769,10 @@ html, body {
 .fixed-footer .runes {
   font-family: 'Noto Sans Runic', monospace;
   letter-spacing: 4px;
-  color: var(--gold);
-  opacity: 0.5;
-  font-size: 12px;
+  color: var(--lumen);
+  opacity: 0.55;
+  font-size: 13px;
+  font-style: normal;
 }
 
 @media (max-width: 1024px) { .fixed-footer { display: none; } }
@@ -767,14 +781,15 @@ html, body {
   position: fixed;
   bottom: 32px;
   right: 32px;
-  font-family: 'VT323', monospace;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.3);
-  letter-spacing: 1px;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(232, 226, 213, 0.4);
+  letter-spacing: 2px;
   z-index: 20;
 }
 
-.fixed-footer-right .gold { color: var(--gold); }
+.fixed-footer-right .gold { color: var(--lumen); }
 
 @media (max-width: 1024px) { .fixed-footer-right { display: none; } }
 
@@ -826,30 +841,30 @@ html, body {
       <rect x="16" y="54" width="36" height="2" fill="#1A1520"/>
       <rect x="50" y="8" width="2" height="48" fill="#1A1520"/>
       <rect x="44" y="10" width="6" height="2" fill="#6B3FB5"/>
-      <rect x="52" y="10" width="2" height="44" fill="#B5AEC2"/>
-      <rect x="18" y="10" width="4" height="4" fill="#8C6118"/>
-      <rect x="18" y="10" width="4" height="2" fill="#D4A841"/>
-      <rect x="46" y="10" width="4" height="4" fill="#8C6118"/>
-      <rect x="46" y="10" width="4" height="2" fill="#D4A841"/>
-      <rect x="18" y="50" width="4" height="4" fill="#8C6118"/>
-      <rect x="18" y="50" width="4" height="2" fill="#D4A841"/>
-      <rect x="46" y="50" width="4" height="4" fill="#8C6118"/>
-      <rect x="46" y="50" width="4" height="2" fill="#D4A841"/>
-      <rect x="28" y="24" width="12" height="12" fill="#8C6118"/>
-      <rect x="28" y="24" width="12" height="2" fill="#D4A841"/>
-      <rect x="28" y="24" width="2" height="12" fill="#D4A841"/>
-      <rect x="38" y="24" width="2" height="12" fill="#3D2B0A"/>
-      <rect x="28" y="34" width="12" height="2" fill="#3D2B0A"/>
-      <rect x="30" y="26" width="6" height="2" fill="#1A1520"/>
-      <rect x="30" y="26" width="2" height="8" fill="#1A1520"/>
-      <rect x="30" y="32" width="6" height="2" fill="#1A1520"/>
-      <rect x="34" y="30" width="2" height="2" fill="#1A1520"/>
-      <rect x="34" y="32" width="2" height="2" fill="#1A1520"/>
-      <rect x="29" y="25" width="2" height="2" fill="#F5DC8A"/>
-      <rect x="32" y="2" width="2" height="2" fill="#F5DC8A"/>
-      <rect x="6" y="60" width="2" height="2" fill="#F5DC8A"/>
-      <rect x="60" y="32" width="2" height="2" fill="#F5DC8A"/>
-      <rect x="58" y="14" width="2" height="2" fill="#7CE3FF"/>
+      <rect x="52" y="10" width="2" height="44" fill="#E0C8FF"/>
+      <rect x="18" y="10" width="4" height="4" fill="#3B1F6B"/>
+      <rect x="18" y="10" width="4" height="2" fill="#A876EB"/>
+      <rect x="46" y="10" width="4" height="4" fill="#3B1F6B"/>
+      <rect x="46" y="10" width="4" height="2" fill="#A876EB"/>
+      <rect x="18" y="50" width="4" height="4" fill="#3B1F6B"/>
+      <rect x="18" y="50" width="4" height="2" fill="#A876EB"/>
+      <rect x="46" y="50" width="4" height="4" fill="#3B1F6B"/>
+      <rect x="46" y="50" width="4" height="2" fill="#A876EB"/>
+      <rect x="28" y="24" width="12" height="12" fill="#1F1335"/>
+      <rect x="28" y="24" width="12" height="2" fill="#F4F1EA"/>
+      <rect x="28" y="24" width="2" height="12" fill="#F4F1EA"/>
+      <rect x="38" y="24" width="2" height="12" fill="#0F0817"/>
+      <rect x="28" y="34" width="12" height="2" fill="#0F0817"/>
+      <rect x="30" y="26" width="6" height="2" fill="#A876EB"/>
+      <rect x="30" y="26" width="2" height="8" fill="#A876EB"/>
+      <rect x="30" y="32" width="6" height="2" fill="#A876EB"/>
+      <rect x="34" y="30" width="2" height="2" fill="#A876EB"/>
+      <rect x="34" y="32" width="2" height="2" fill="#A876EB"/>
+      <rect x="29" y="25" width="2" height="2" fill="#F4F1EA"/>
+      <rect x="32" y="2" width="2" height="2" fill="#F4F1EA"/>
+      <rect x="6" y="60" width="2" height="2" fill="#F4F1EA"/>
+      <rect x="60" y="32" width="2" height="2" fill="#F4F1EA"/>
+      <rect x="58" y="14" width="2" height="2" fill="#A876EB"/>
       <rect x="56" y="50" width="2" height="2" fill="#A876EB"/>
     </svg>
     <span class="nav-name">GRIMORE</span>
@@ -882,7 +897,7 @@ html, body {
     <!-- Badge -->
     <div class="badge">
       <span class="runes-mini">ᚠ ᚢ ᚦ</span>
-      <span>Powered by Haiku 4.5</span>
+      <span>Forjado com Haiku 4.5</span>
       <span class="runes-mini">ᛒ ᛗ ᛇ</span>
     </div>
 
@@ -992,7 +1007,7 @@ html, body {
 </div>
 
 <div class="fixed-footer-right">
-  <span class="gold">✦</span> haiku 4.5 ativo
+  <span class="gold">✦</span> Haiku 4.5 desperto
 </div>
 
 <script>
@@ -1015,7 +1030,7 @@ html, body {
   // Gera partículas
   const particlesContainer = document.getElementById('particles');
   const particleCount = 30;
-  const colors = ['gold', 'cyan', 'violet'];
+  const colors = ['gold', 'cyan', 'violet']; // gold=paper, cyan=lumen, violet=mist
   for (let i = 0; i < particleCount; i++) {
     const spark = document.createElement('div');
     const color = colors[Math.floor(Math.random() * colors.length)];
