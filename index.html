@@ -885,6 +885,140 @@ html, body {
 
 @media (max-width: 1024px) { .fixed-footer-right { display: none; } }
 
+/* ============ EXPLAINER (O que é um grimório) ============ */
+
+.explainer {
+  position: relative;
+  z-index: 10;
+  padding: 120px 24px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.explainer-title {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 500;
+  text-align: center;
+  color: var(--paper);
+  letter-spacing: -0.3px;
+  margin-bottom: 64px;
+  line-height: 1.15;
+}
+
+.explainer-title .emph {
+  font-family: 'Magic Whisper', 'EB Garamond', serif;
+  background: linear-gradient(135deg, var(--sigil-gold-light) 0%, var(--sigil-gold) 50%, var(--sigil-gold-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.4em;
+  letter-spacing: 1px;
+  padding: 0 0.1em 0.15em;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.explainer-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .explainer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Animação 3 frames */
+.explainer-anim {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(168, 118, 235, 0.25);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55), 0 0 60px rgba(107, 63, 181, 0.18);
+  background: var(--void);
+}
+
+.anim-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.anim-frame-1 { animation-name: anim-f1; }
+.anim-frame-2 { animation-name: anim-f2; }
+.anim-frame-3 { animation-name: anim-f3; }
+
+@keyframes anim-f1 {
+  0%, 30% { opacity: 1; }
+  33%, 96% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes anim-f2 {
+  0%, 30% { opacity: 0; }
+  33%, 63% { opacity: 1; }
+  66%, 100% { opacity: 0; }
+}
+
+@keyframes anim-f3 {
+  0%, 63% { opacity: 0; }
+  66%, 96% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.anim-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Texto explicativo */
+.explainer-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.explainer-copy p {
+  font-family: 'EB Garamond', serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(232, 226, 213, 0.82);
+}
+
+.explainer-copy strong {
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.explainer-copy .arcane {
+  color: var(--lumen);
+  font-style: italic;
+}
+
+.explainer-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--sigil-gold) 0%, transparent 100%);
+  margin: 4px 0 8px;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--void); }
@@ -1063,6 +1197,35 @@ html, body {
     <button class="cta-primary">Selar Pacto Grátis</button>
   </div>
 </main>
+
+<!-- ============ EXPLAINER ============ -->
+<section class="explainer" id="sobre">
+  <h2 class="explainer-title">
+    Afinal de contas, o que é um <span class="emph">grimório</span>?
+  </h2>
+
+  <div class="explainer-grid">
+    <div class="explainer-anim">
+      <img class="anim-frame anim-frame-1" src="./assets/grimorio-1.png" alt="Mago lendo o grimório" />
+      <img class="anim-frame anim-frame-2" src="./assets/grimorio-2.png" alt="Mago canalizando energia" />
+      <img class="anim-frame anim-frame-3" src="./assets/grimorio-3.png" alt="Mago conjurando feitiço" />
+      <div class="anim-glow"></div>
+    </div>
+
+    <div class="explainer-copy">
+      <div class="explainer-divider"></div>
+      <p>
+        Um <strong>grimório</strong> é o livro de um mago — onde ele guarda fórmulas, símbolos e todo o conhecimento que precisa pra <span class="arcane">conjurar feitiços</span>. Não é um livro qualquer: é uma fonte viva, consultada toda hora, traduzida em prática real.
+      </p>
+      <p>
+        É exatamente o que o <strong>Grimoire</strong> faz com teu material de estudo. Tu sobe um PDF — apostila, capítulo, atividade — e ele vira um <span class="arcane">grimório próprio teu</span>: tu pergunta, ele responde com base no que tá ali dentro. Resumo, explicação, resolução, citação direta.
+      </p>
+      <p>
+        Em vez de ler 400 páginas pra achar uma resposta, tu <strong>conjura o feitiço certo</strong> e a resposta vem na hora — com a página exata que justifica.
+      </p>
+    </div>
+  </div>
+</section>
 
 <!-- ============ FOOTER FIXO ============ -->
 <div class="fixed-footer">
