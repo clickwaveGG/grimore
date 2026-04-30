@@ -8,6 +8,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Pirata+One&family=IM+Fell+English:ital@0;1&family=Cardo:ital@0;1&family=Noto+Sans+Runic&display=swap" rel="stylesheet">
 <style>
+@font-face {
+  font-family: 'Magic Curls';
+  src: url('./assets/fonts/MagicCurls.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --void: #030303;
   --void-arcane: #0F0817;
@@ -238,12 +246,13 @@ html, body {
 }
 
 .nav-name {
-  font-family: 'Uncial Antiqua', 'Cardo', serif;
+  font-family: 'Magic Curls', 'Uncial Antiqua', 'Cardo', serif;
   font-weight: 400;
-  font-size: 30px;
-  letter-spacing: 1px;
+  font-size: 34px;
+  letter-spacing: 0;
   color: var(--paper);
   text-shadow: 0 0 18px rgba(168, 118, 235, 0.4);
+  text-transform: lowercase;
 }
 
 .nav-links {
@@ -379,14 +388,16 @@ html, body {
 }
 
 .headline .accent {
-  font-family: 'Pirata One', 'Uncial Antiqua', serif;
+  font-family: 'Magic Curls', 'Pirata One', 'Uncial Antiqua', serif;
   font-weight: 400;
   font-style: normal;
   color: var(--lumen);
   text-shadow: 0 0 32px rgba(168, 118, 235, 0.6);
   display: inline-block;
-  margin-top: 0.05em;
-  letter-spacing: 1px;
+  margin-top: 0.1em;
+  letter-spacing: 0;
+  font-size: 1.15em;
+  line-height: 1.1;
 }
 
 /* Subhead */
@@ -868,7 +879,7 @@ html, body {
       <rect x="58" y="14" width="2" height="2" fill="#A876EB"/>
       <rect x="56" y="50" width="2" height="2" fill="#A876EB"/>
     </svg>
-    <span class="nav-name">GRIMORE</span>
+    <span class="nav-name">Grimore</span>
   </div>
 
   <div class="nav-links">
