@@ -240,9 +240,11 @@ html, body {
 }
 
 .nav-logo {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(168, 118, 235, 0.4));
 }
 
 .nav-name {
@@ -842,43 +844,7 @@ html, body {
 <!-- ============ NAVBAR ============ -->
 <nav class="navbar">
   <div class="nav-brand">
-    <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" shape-rendering="crispEdges">
-      <rect x="14" y="56" width="40" height="2" fill="#0F0817"/>
-      <rect x="52" y="10" width="2" height="46" fill="#0F0817"/>
-      <rect x="10" y="8" width="6" height="48" fill="#1F1335"/>
-      <rect x="10" y="8" width="6" height="2" fill="#1A1520"/>
-      <rect x="10" y="54" width="6" height="2" fill="#1A1520"/>
-      <rect x="16" y="8" width="36" height="48" fill="#3B1F6B"/>
-      <rect x="16" y="8" width="36" height="2" fill="#1A1520"/>
-      <rect x="16" y="54" width="36" height="2" fill="#1A1520"/>
-      <rect x="50" y="8" width="2" height="48" fill="#1A1520"/>
-      <rect x="44" y="10" width="6" height="2" fill="#6B3FB5"/>
-      <rect x="52" y="10" width="2" height="44" fill="#E0C8FF"/>
-      <rect x="18" y="10" width="4" height="4" fill="#3B1F6B"/>
-      <rect x="18" y="10" width="4" height="2" fill="#A876EB"/>
-      <rect x="46" y="10" width="4" height="4" fill="#3B1F6B"/>
-      <rect x="46" y="10" width="4" height="2" fill="#A876EB"/>
-      <rect x="18" y="50" width="4" height="4" fill="#3B1F6B"/>
-      <rect x="18" y="50" width="4" height="2" fill="#A876EB"/>
-      <rect x="46" y="50" width="4" height="4" fill="#3B1F6B"/>
-      <rect x="46" y="50" width="4" height="2" fill="#A876EB"/>
-      <rect x="28" y="24" width="12" height="12" fill="#1F1335"/>
-      <rect x="28" y="24" width="12" height="2" fill="#F4F1EA"/>
-      <rect x="28" y="24" width="2" height="12" fill="#F4F1EA"/>
-      <rect x="38" y="24" width="2" height="12" fill="#0F0817"/>
-      <rect x="28" y="34" width="12" height="2" fill="#0F0817"/>
-      <rect x="30" y="26" width="6" height="2" fill="#A876EB"/>
-      <rect x="30" y="26" width="2" height="8" fill="#A876EB"/>
-      <rect x="30" y="32" width="6" height="2" fill="#A876EB"/>
-      <rect x="34" y="30" width="2" height="2" fill="#A876EB"/>
-      <rect x="34" y="32" width="2" height="2" fill="#A876EB"/>
-      <rect x="29" y="25" width="2" height="2" fill="#F4F1EA"/>
-      <rect x="32" y="2" width="2" height="2" fill="#F4F1EA"/>
-      <rect x="6" y="60" width="2" height="2" fill="#F4F1EA"/>
-      <rect x="60" y="32" width="2" height="2" fill="#F4F1EA"/>
-      <rect x="58" y="14" width="2" height="2" fill="#A876EB"/>
-      <rect x="56" y="50" width="2" height="2" fill="#A876EB"/>
-    </svg>
+    <img class="nav-logo" src="./assets/logo.png" alt="Grimoire" />
     <span class="nav-name">Grimoire</span>
   </div>
 
