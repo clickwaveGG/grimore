@@ -92,17 +92,32 @@ html, body {
   min-height: 100vh;
   position: relative;
   -webkit-font-smoothing: antialiased;
-  background: transparent;
+  background: var(--void);
 }
 
 /* ============ BACKGROUND ANIMADO ============ */
 
 .bg-layer {
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
   z-index: 0;
   background: var(--void);
   overflow: hidden;
+}
+
+/* Gradient final pra fundir imagem com o preto da pagina */
+.bg-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35vh;
+  z-index: 6;
+  background: linear-gradient(180deg, transparent 0%, rgba(3, 3, 3, 0.6) 50%, var(--void) 100%);
+  pointer-events: none;
 }
 
 .bg-image {
@@ -191,7 +206,7 @@ html, body {
 
 /* Centro shape orgânico */
 .center-glow {
-  position: fixed;
+  position: absolute;
   top: 40%;
   left: 50%;
   transform: translateX(-50%);
@@ -212,10 +227,14 @@ html, body {
 
 /* Partículas mágicas (douradas + ciano) */
 .particles {
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
   z-index: 4;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .spark {
@@ -239,7 +258,7 @@ html, body {
 
 /* Runas decorativas espalhadas */
 .rune-decor {
-  position: fixed;
+  position: absolute;
   font-family: 'Noto Sans Runic', monospace;
   color: var(--arcane);
   opacity: 0.18;
@@ -1035,6 +1054,7 @@ html, body {
   <div class="aurora aurora-2"></div>
   <div class="aurora aurora-3"></div>
   <div class="vignette"></div>
+  <div class="bg-fade"></div>
 </div>
 <div class="center-glow"></div>
 
