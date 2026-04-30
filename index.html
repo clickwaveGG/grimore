@@ -77,6 +77,8 @@
   --dust: #B5AEC2;
   --paper: #F4F1EA;
   --bone: #E8E2D5;
+  --sigil-gold: #D4AF37;
+  --sigil-gold-light: #F5DC8A;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -304,8 +306,12 @@ html, body {
   font-weight: 400;
   font-size: 32px;
   letter-spacing: 1px;
-  color: var(--paper);
-  text-shadow: 0 0 18px rgba(168, 118, 235, 0.4);
+  background: linear-gradient(135deg, var(--sigil-gold-light) 0%, var(--sigil-gold) 50%, var(--sigil-gold-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--sigil-gold);
+  text-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
 }
 
 .nav-links {
@@ -444,8 +450,12 @@ html, body {
   font-family: 'Magic Whisper', 'EB Garamond', serif;
   font-weight: 400;
   font-style: normal;
-  color: var(--lumen);
-  text-shadow: 0 0 32px rgba(168, 118, 235, 0.6);
+  background: linear-gradient(135deg, var(--sigil-gold-light) 0%, var(--sigil-gold) 50%, var(--sigil-gold-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--sigil-gold);
+  text-shadow: 0 0 32px rgba(212, 175, 55, 0.45);
   display: inline-block;
   margin-top: 0.05em;
   letter-spacing: 1px;
