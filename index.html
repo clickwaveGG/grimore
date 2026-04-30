@@ -520,103 +520,77 @@ html, body {
   width: 100%;
   max-width: 672px;
   margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
   animation: fade-up 0.8s ease-out 0.8s both;
+}
+
+/* Intro acima do card */
+.chat-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.chat-intro-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  background: linear-gradient(180deg, rgba(244, 241, 234, 0.95) 0%, rgba(244, 241, 234, 0.45) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 4px;
+}
+
+.chat-intro-divider {
+  width: 100%;
+  max-width: 320px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(232, 226, 213, 0.2) 50%, transparent 100%);
+}
+
+.chat-intro-sub {
+  font-family: 'EB Garamond', serif;
+  font-size: 15px;
+  color: rgba(232, 226, 213, 0.4);
+  font-style: italic;
 }
 
 .chat-card {
   position: relative;
-  background: rgba(15, 8, 23, 0.55);
+  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(168, 118, 235, 0.18);
-  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(168, 118, 235, 0.05);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
   animation: scale-in 0.8s ease-out 1s both;
 }
 
 @keyframes scale-in {
-  from { opacity: 0; transform: scale(0.95); }
+  from { opacity: 0; transform: scale(0.98); }
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Cantos arcanos sutis */
-.chat-card::before, .chat-card::after,
-.chat-card .corner-bl, .chat-card .corner-br {
-  content: '';
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  border-color: var(--lumen);
-  border-style: solid;
-  border-width: 0;
-  opacity: 0.7;
-  z-index: 2;
-}
-
-.chat-card::before {
-  top: 12px; left: 12px;
-  border-top-width: 1px;
-  border-left-width: 1px;
-}
-.chat-card::after {
-  top: 12px; right: 12px;
-  border-top-width: 1px;
-  border-right-width: 1px;
-}
-.chat-card .corner-bl {
-  bottom: 12px; left: 12px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-}
-.chat-card .corner-br {
-  bottom: 12px; right: 12px;
-  border-bottom-width: 1px;
-  border-right-width: 1px;
-}
-
-.chat-header {
-  padding: 24px 24px 0;
-  text-align: left;
-}
-
-.chat-label {
-  font-family: 'EB Garamond', serif;
-  font-style: italic;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: rgba(232, 226, 213, 0.5);
-  font-weight: 400;
-}
-
-.chat-label::before {
-  content: '◇ ';
-  color: var(--lumen);
-}
-
-.chat-title {
-  font-family: 'EB Garamond', serif;
-  font-size: 22px;
-  font-weight: 500;
-  color: white;
-  margin-top: 4px;
-  letter-spacing: 0.5px;
-}
-
 .chat-body {
-  padding: 16px 24px 0;
+  padding: 16px;
 }
 
 .chat-textarea {
   width: 100%;
-  padding: 18px;
-  background: rgba(15, 8, 23, 0.4);
-  border: 1px solid rgba(168, 118, 235, 0.15);
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
   border-radius: 0;
   color: rgba(232, 226, 213, 0.95);
   font-family: 'EB Garamond', serif;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.5;
   resize: none;
   min-height: 60px;
@@ -625,16 +599,16 @@ html, body {
   transition: all 0.2s;
 }
 
-.chat-textarea::placeholder { color: rgba(232, 226, 213, 0.3); font-style: italic; }
-.chat-textarea:focus {
-  border-color: rgba(168, 118, 235, 0.5);
-  background: rgba(15, 8, 23, 0.6);
-  box-shadow: 0 0 0 3px rgba(168, 118, 235, 0.1);
+.chat-textarea::placeholder {
+  color: rgba(232, 226, 213, 0.25);
+  font-style: italic;
 }
+
+.chat-textarea:focus { background: transparent; }
 
 /* Anexos */
 .attachments {
-  padding: 0 24px 12px;
+  padding: 0 16px 12px;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -645,10 +619,11 @@ html, body {
   align-items: center;
   gap: 8px;
   padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 8px;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
+  font-family: 'EB Garamond', serif;
+  font-size: 13px;
+  color: rgba(232, 226, 213, 0.7);
 }
 
 .attachment-remove {
@@ -664,8 +639,7 @@ html, body {
 
 /* Footer chat */
 .chat-footer {
-  padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.02);
+  padding: 12px 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
@@ -702,15 +676,17 @@ html, body {
 .chat-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .typing-indicator {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.4);
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(232, 226, 213, 0.5);
 }
 
 .typing-dots { display: flex; gap: 3px; }
@@ -732,33 +708,66 @@ html, body {
 }
 
 .btn-conjurar {
-  padding: 11px 22px;
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(232, 226, 213, 0.3);
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(232, 226, 213, 0.4);
   font-family: 'EB Garamond', serif;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  border: 1px solid rgba(168, 118, 235, 0.15);
-  border-radius: 0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   transition: all 0.2s;
 }
+
+.btn-conjurar svg { width: 14px; height: 14px; }
 
 .btn-conjurar.active {
   background: var(--paper);
   color: var(--void);
-  border-color: var(--bone);
-  box-shadow: 0 0 20px rgba(168, 118, 235, 0.35);
+  box-shadow: 0 4px 16px rgba(244, 241, 234, 0.15);
 }
 
-.btn-conjurar.active:hover { box-shadow: 0 0 28px rgba(168, 118, 235, 0.6); }
+.btn-conjurar.active:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px rgba(244, 241, 234, 0.25);
+}
 
-.btn-conjurar svg { width: 12px; height: 12px; }
+/* Quick actions abaixo do card */
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.quick-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  font-family: 'EB Garamond', serif;
+  font-size: 14px;
+  color: rgba(232, 226, 213, 0.6);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quick-action svg { width: 14px; height: 14px; }
+
+.quick-action:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(232, 226, 213, 0.95);
+  border-color: rgba(168, 118, 235, 0.2);
+}
 
 /* Command palette */
 .cmd-palette {
@@ -766,28 +775,18 @@ html, body {
   left: 16px;
   right: 16px;
   bottom: calc(100% + 8px);
-  background: rgba(15, 8, 23, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(168, 118, 235, 0.25);
-  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   z-index: 50;
   overflow: hidden;
   display: none;
   animation: fade-up 0.2s ease-out;
+  padding: 4px 0;
 }
 
 .cmd-palette.show { display: block; }
-
-.cmd-palette-header {
-  padding: 10px 14px;
-  font-family: 'EB Garamond', serif;
-  font-style: italic;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: var(--lumen);
-  border-bottom: 1px solid rgba(168, 118, 235, 0.1);
-}
 
 .cmd-item {
   display: flex;
@@ -949,13 +948,18 @@ html, body {
 
     <!-- Chat card (estilo Liquid) -->
     <div class="chat-wrapper">
+
+      <!-- Intro acima do card -->
+      <div class="chat-intro">
+        <h2 class="chat-intro-title">Como posso te ajudar a estudar?</h2>
+        <div class="chat-intro-divider"></div>
+        <p class="chat-intro-sub">Digite um feitiço ou faça uma pergunta</p>
+      </div>
+
       <div class="chat-card">
-        <div class="corner-bl"></div>
-        <div class="corner-br"></div>
 
         <!-- Command palette -->
         <div class="cmd-palette" id="cmd-palette">
-          <div class="cmd-palette-header">▸ Feitiços rápidos</div>
           <div class="cmd-item" data-cmd="/resumir " onclick="selectCmd('/resumir ')">
             <div class="cmd-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
@@ -986,16 +990,11 @@ html, body {
           </div>
         </div>
 
-        <div class="chat-header">
-          <div class="chat-label">Vex Arcanista</div>
-          <div class="chat-title">Como posso te ajudar a estudar?</div>
-        </div>
-
         <div class="chat-body">
           <textarea
             class="chat-textarea"
             id="prompt"
-            placeholder="Pergunta pra Vex sobre teu material... (use / pra ver feitiços rápidos)"
+            placeholder="Pergunta pra Vex sobre teu material..."
             rows="1"
             oninput="autoResize(this); checkSlash(this.value); updateBtn();"
             onkeydown="handleKey(event)"
@@ -1021,11 +1020,31 @@ html, body {
             </div>
             <button class="btn-conjurar" id="send-btn" onclick="sendMsg()">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Conjurar
+              <span>Conjurar</span>
             </button>
           </div>
         </div>
 
+      </div>
+
+      <!-- Quick actions abaixo do card -->
+      <div class="quick-actions">
+        <button class="quick-action" onclick="selectCmd('/resumir ')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Resumir</span>
+        </button>
+        <button class="quick-action" onclick="selectCmd('/explicar ')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>Explicar</span>
+        </button>
+        <button class="quick-action" onclick="selectCmd('/quizar ')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>Quizar</span>
+        </button>
+        <button class="quick-action" onclick="selectCmd('/resolver ')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>Resolver</span>
+        </button>
       </div>
     </div>
 
